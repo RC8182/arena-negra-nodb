@@ -1,0 +1,7 @@
+version: '3.9'
+services:
+
+  arena:
+    image: arena-negra-nodb
+    build: .
+
