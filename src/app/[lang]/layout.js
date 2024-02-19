@@ -27,6 +27,7 @@ export default function RootLayout({ children, params }) {
       <meta name="description" content={currentMetadata?.description} />
       <meta name="keywords" content={currentMetadata?.keywords} />
       <meta name="google-site-verification" content="Rm2sDQs-MVKtHT9LyDkRsSFVTAVbA0OHFvWdRa7I3F8" />
+      <meta name="ahrefs-site-verification" content="9b2fa73d05ce4d07c7d774b8479e5f3104effd2df784966626c80a541bb702b7"></meta>
       <meta name="theme-color" content="black" />
       <body>
         <Providers>
