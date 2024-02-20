@@ -1,6 +1,7 @@
 import { Box, Flex, Heading, Link, Stack, Text} from '@chakra-ui/react'
 import { Usuarios } from './usuarios'
 import { datos } from './db'
+import ReviewCard from '../reviews/reviewCard';
 
 
 export const Testimonio = ({idioma}) => {
@@ -35,6 +36,7 @@ export const Testimonio = ({idioma}) => {
                             ) 
                             })
                             }
+                            <ReviewCard/>
                   </Stack>
                   <Flex
                       flexDir={{ base: 'column', lg: 'row' }}

@@ -5,6 +5,7 @@ import { Testimonio } from './testimony/testimonio'
 import { Especialidades } from './especialidades/especialidades'
 import { Welcome } from './vienvenida/welcome'
 import Portada from './portada/portada'
+import { Reviews } from './reviews/reviews'
 export const Body = ({idioma}) => {
 
   return (
@@ -22,7 +23,7 @@ export const Body = ({idioma}) => {
         </Flex>
 
         <Flex marginTop={'1%'}>
-          <Testimonio idioma={idioma}/>
+          <Reviews idioma={idioma}/>
         </Flex>
 
         <Flex marginTop={'1%'}>
