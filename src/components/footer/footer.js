@@ -104,7 +104,7 @@ export default function Footer({idioma}) {
             flexGrow: 1,
             ml: 8,
           }}>
-          <Logo width={'50px'}/>
+          <Logo width={'120px'}/>
         </Flex>
         <Text fontSize={'sm'} textAlign={'center'}>
           © 2023 Arena Negra Restaurante. All rights reserved

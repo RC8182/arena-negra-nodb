@@ -71,7 +71,7 @@ export default async function Portada({ idioma }) {
             </Flex>
             <Flex
               margin={'1%'}
-              padding={'1%'}
+              padding={'3%'}
               className='titulo'
               justifyContent={'center'}
               color={'white'}
