@@ -1,6 +1,7 @@
 import ScrollToTopButton from '@/components/scrollUp';
 import './globals.css'
 import { Providers } from './providers'
+import GoogleAnalytics from './googleAnalytics';
 
 
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children, params }) {
       <meta name="theme-color" content="black" />
       <body>
         <Providers>
+        <GoogleAnalytics />
           {children}
         <ScrollToTopButton/>
         </Providers>

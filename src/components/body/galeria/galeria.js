@@ -7,7 +7,7 @@ import { datos } from "./db";
 
 export default async function Galeria({idioma}) {
 
-  const datosGaleria =( idioma=='es') ? datos.esp : datos.ing;
+  const datosGaleria =( idioma=='es') ? datos.es : datos.en;
   const titulo= datosGaleria.galeria.titulo;
   const data = datosGaleria.galeria.imagenes;
 

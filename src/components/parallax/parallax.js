@@ -1,50 +1,28 @@
 import React from 'react'
-import { Box, Flex } from '@chakra-ui/react'
-export const Parallax = ({img , titulo}) => {
+import { AltComponent } from './altComponent/altComponent'
+export const Parallax = ({img , titulo, alt}) => {
 
   return (
-    <Box w={'100%'}>
-        <Box 
-          className='fondo' 
-          minW={{base:'300px', lg:'100vw'}}
-          minH={{base:'600px', lg:'600px'}}
-          position={'relative'}
-          backgroundImage={`url(${img})`}
-          backgroundAttachment={'fixed'}
-          backgroundPosition={'center'}
-          backgroundRepeat={'no-repeat'}
-          backgroundSize={'contain'}
-          //m={'50px'}
-          >
-            <Box 
-                className='contenedor-titulo'
-                position={'absolute'}
-                left={0}
-                top={0}
-                width={'100%'}
-                textAlign={'center'}>
-                <Flex 
-                  className='titulo'
-                  backgroundColor={'black'}
-                  justifyContent={'center'}
-                  color={'white'}
-                  padding={'18px'}
-                  fontSize={'25px'}
-                  letterSpacing={'10px'}
-                >{titulo}</Flex>
-            </Box>
-        </Box>
+    <div className='w-full'>
+        <div 
+          className='fondo relative bg-black bg-fixed bg-center bg-no-repeat bg-cover' 
+          style={{minWidth: '300px', minHeight: '600px', backgroundImage: `url(${img})`}}>
+            <AltComponent alt={alt}/>
+            <div 
+                className='contenedor-titulo absolute inset-0 text-center'>
+                <div 
+                  className='titulo bg-black justify-center text-white py-4 text-lg flex flex-col tracking-widest'>
+                  {titulo}
+                </div>
+            </div>
+        </div>
 
-        <Flex
-             className='seccion'
-             height={'auto'}
-             alignItems={'center'}
-             justifyContent={'center'}
-             padding={'0 20'}
+        <div
+             className='seccion h-auto items-center justify-center px-5'
              >
 
-        </Flex>
+        </div>
         
-    </Box>
+    </div>
   )
 }

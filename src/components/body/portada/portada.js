@@ -1,93 +1,56 @@
-import { Box, Flex } from '@chakra-ui/react';
-import { Reservar } from '../../botones/reservas';
-import { Logo } from '../../logo';
-import { datos } from './db';
+import { Reservar } from '../../botones/reservas'
+import { Logo } from '../../logo'
+import { datos } from './db'
+import { AltComponent } from '@/components/parallax/altComponent/altComponent';
 
-export default async function Portada({ idioma }) {
-  const datosPortada = idioma === 'es' ? datos?.esp : datos?.ing;
-  const h1 = datosPortada.portada.h1;
-  const h2 = datosPortada.portada.h2;
-  const sub = datosPortada.portada.subtitulo;
-  const videoUrl = 'uploads/portada/arena.mp4';
+export default function Portada ({idioma}) {
+
+    const datosPortada =( idioma==='es') ? datos?.esp : datos?.ing;
+    const h1= datosPortada.portada.h1
+    const h2= datosPortada.portada.h2
+    const sub = datosPortada.portada.subtitulo;
+    const img= datosPortada.portada.img
+    const alt= datosPortada.portada.alt
 
   return (
-    <Box w={'100%'}>
-      <Box
-        className='fondo'
-        minW={{ base: '300px', lg: '100vw' }}
-        minH={{ base: '600px', lg: '600px' }}
-        position={'relative'}
-        backgroundColor={'black'}
-      >
-        <video
-          autoPlay
-          // loop
-          muted
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-          }}
-        >
-          <source src={videoUrl} type='video/mp4' />
-          Tu navegador no soporta el tag de video.
-        </video>
-        <Box
-          className='contenedor-titulo'
-          position={'absolute'}
-          left={0}
-          top={0}
-          width={'100%'}
-          height={'100%'}
-          backgroundColor={'rgba(44, 42, 42, 0.527)'}
-          textAlign={'center'}
-        >
-          <Flex flexDir={'column'}>
-            <Flex
-              margin={'3%'}
-              className='titulo'
-              justifyContent={'center'}
-              color={'white'}
-              padding={'18px'}
-              fontSize={'25px'}
-              flexDir={'column'}
-              letterSpacing={'10px'}
-            >
-              <h2>{h2}</h2>
-              <Flex  
-              fontSize={'18px'}
-              justifyContent={'center'}
-              padding={'18px'}
+    <div className='w-full'>
+        <div 
+        className='fondo relative bg-black bg-fixed bg-center bg-no-repeat bg-cover' 
+        style={{minWidth: '300px', minHeight: '600px', backgroundImage: `url(${img.src})`}}>
+             <AltComponent alt={alt} />
+            <div 
+                className='contenedor-titulo absolute inset-0 bg-gray-700 bg-opacity-50 text-center'>
+                <div className='flex flex-col'>
+                    <div 
+                    className='titulo justify-center text-white py-4 text-lg flex flex-col tracking-widest'
+                    style={{margin: '3%', fontSize: '25px'}}>
+                    <h2>{h2}</h2>
+                    </div>
+                    <div className='flex justify-center p-4 text-lg text-white'>
+                        <h2>{sub}</h2>
+                    </div>
+
+                    <div className='flex flex-col justify-center w-9/10 m-auto'>
+                        <Reservar idioma={idioma} />
+                    </div>
+                    <div 
+                        className='titulo justify-center text-white py-2 text-lg flex flex-col tracking-widest'
+                        style={{margin: '1%', fontSize: '25px'}}>
+                        <h1>{h1}</h1>
+                        <Logo width={'150px'}/>
+                    </div>
+                   
+                </div>
+
+            </div>
+        </div>
+
+        <div
+             className='seccion h-auto items-center justify-center px-5'
              >
-              <h2>{sub}</h2>
-              </Flex>
-            </Flex>
 
-            <Flex flexDir={'column'} justifyContent={'center'} w={'90%'} margin={'auto'}>
-              <Reservar idioma={idioma} />
-            </Flex>
-            <Flex
-              margin={'1%'}
-              padding={'3%'}
-              className='titulo'
-              justifyContent={'center'}
-              color={'white'}
-              fontSize={'25px'}
-              flexDir={'column'}
-              letterSpacing={'10px'}
-            >
-              <h1>{h1}</h1>
-              <Logo width={'150px'} />
-            </Flex>
-          </Flex>
-        </Box>
-      </Box>
-
-      <Flex className='seccion' height={'auto'} alignItems={'center'} justifyContent={'center'} padding={'0 20'}></Flex>
-    </Box>
-  );
+        </div>
+        
+    </div>
+  )
 }
-
