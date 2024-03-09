@@ -19,12 +19,13 @@ export const metadata = {
 
 
 export default function App({params}){
-
+  const currentUrl = `https://arena-negra-restaurant.com/${params.lang}`;
   const lang= params.lang;
   const currentMetadata = metadata[lang];
     return(
         <div>
           <title>{currentMetadata?.title}</title>
+          <link rel="canonical" href={currentUrl} />
           <meta name="description" content={currentMetadata?.description} />
           <meta name="keywords" content={currentMetadata?.keywords} />
           <NavBar idioma={lang}/>
