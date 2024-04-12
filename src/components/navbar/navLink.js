@@ -1,4 +1,3 @@
-import { Box, HStack } from "@chakra-ui/react";
 import Link from "next/link";
 import { datos } from "./db";
 
@@ -9,14 +8,14 @@ export const NavLink = ({idioma}) => {
     : datos?.ing.navbar.links;
     
         return (
-        <HStack as={'nav'} spacing={4}>
+        <nav className="flex space-x-4">
               {Links?.map((e) => (              
-                <Box key={e.title}>
-                <Link href={e.url}>
+                <div key={e.title} className="box-border">
+                <Link className="hover:text-gold" href={e.url}>
                 {e.title}
                 </Link>
-                </Box>
+                </div>
               ))}
-        </HStack>
+        </nav>
     )
   }

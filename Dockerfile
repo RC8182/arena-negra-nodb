@@ -10,7 +10,6 @@ RUN chown -R node:node /app && \
 
 USER node
 RUN npm install && \
-    npm install @chakra-ui/react @chakra-ui/next-js @emotion/react @emotion/styled framer-motion @chakra-ui/icons tailwindcss postcss autoprefixer && \
     npm install sharp && \
     npm rebuild --arch=x64 --platform=linux --libc=musl sharp && \
     npm i @formatjs/intl-localematcher &&\

@@ -1,9 +1,5 @@
-import { Box, Flex, Heading, } from "@chakra-ui/react";
 import { Parallax } from "@/components/parallax/parallax";
 import { datos } from "./db";
-
-
-
 
 export default async function Galeria({idioma}) {
 
@@ -12,22 +8,15 @@ export default async function Galeria({idioma}) {
   const data = datosGaleria.galeria.imagenes;
 
   return (
-    <Box backgroundColor={'black'} 
-    color={'white'} 
-    w={'100%'}
-    minW={{base:'300px', lg:'100vw'}}
-    minH={{base:'600px', lg:'600px'}}>
-    <Box >
-      <Flex flexDir={'column'} 
-        align={'center'}
-        flexWrap={'wrap'}>
-        <Heading >{titulo}</Heading>        
-         {data.map((e,i)=>{
-          return <Parallax img={e.url.src} alt={e.alt} key={i} /> 
-         })}
-
-      </Flex>
-    </Box>
-    </Box>
+    <div className="bg-black text-white w-full p-5 lg:min-w-[100vw]">
+      <div className="mt-5">
+        <div className="flex flex-col items-center flex-wrap" id="galeria">
+          <h1 className="text-4xl font-bold text-metal">{titulo}</h1>        
+          {data.map((e,i)=>{
+            return <Parallax img={e.url.src} alt={e.alt} key={i} /> 
+          })}
+        </div>
+      </div>
+    </div>
   )
 }

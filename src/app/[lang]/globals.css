@@ -1,8 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 
-body {
-  background-color: #101010;
-  color: white;
-} */
+
+@import url('https://fonts.googleapis.com/css2?family=Lustria&display=swap');
+
+@layer base {
+  body {
+    font-family: 'Lustria', serif;
+    color: '#FFD700';
+  }
+}

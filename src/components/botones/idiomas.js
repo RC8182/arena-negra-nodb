@@ -5,10 +5,10 @@ export const Idiomas = ({idioma}) => {
 
 
   return (
-    <Box textColor={'white'}>
+    <div className='text-white hover:text-gold'>
         {(idioma === 'en')?
         <Link href="/es" >Español?</Link>:
         <Link href="/en" >English?</Link>}
-    </Box>
+    </div>
   )
 }

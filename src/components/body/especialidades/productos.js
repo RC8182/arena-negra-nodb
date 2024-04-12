@@ -1,28 +1,21 @@
-import { Card, CardBody, Heading, Stack, Text } from '@chakra-ui/react'
 import Image from 'next/image';
 
+export const Productos = ({img, alt, titulo, texto}) => {
 
-export const Productos = (props) => {
-    const img= props?.img;
-    const alt= props?.alt;
-    const titulo= props?.titulo;
-    const texto= props?.texto;
   return (
-    <Card maxW='sm'>
-  <CardBody>
-    
-    <Image
-      src={img}
-      alt={alt}
-    />
-    <Stack mt='6' spacing='3'>
-      <Heading size='md'>{titulo}</Heading>
-      <Text>
-        {texto}
-      </Text>
-    </Stack>
-  </CardBody>
-
-</Card>
+    <div className="max-w-sm bg-white shadow-md rounded-lg overflow-hidden">
+      <div className="p-6">
+        <Image
+          src={img}
+          alt={alt}
+        />
+        <div className="mt-6 space-y-3">
+          <h2 className=" text-lg font-semibold text-metal">{titulo}</h2>
+          <p className='text-black'>
+            {texto}
+          </p>
+        </div>
+      </div>
+    </div>
   )
 }

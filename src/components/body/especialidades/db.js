@@ -39,8 +39,8 @@ export const datos=
             productos:[
                 {
                     img: paella,
-                    alt:'Imagen de una paella',
-                    titulo:'Image of a paella',
+                    alt:'Image of a paella',
+                    titulo:'Paellas',
                     texto: 'Our Rice: Valencian Paella, Soupy Lobster Rice, Seafood Rice, Black Octopus Rice and Fideuá',
                 },
                 {

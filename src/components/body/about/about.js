@@ -9,8 +9,8 @@ export const About = ({idioma}) => {
     <div className="bg-black text-white w-full p-5 lg:min-w-[100vw]">
       <div className="m-5">
         <div className="flex flex-col items-center space-y-0">
-          <h1 className="text-3xl font-bold" id='sobre-nosotros'>{titulo}</h1>
-          <div className="mt-3">
+          <h1 className="text-4xl font-bold  text-metal" id='sobre-nosotros'>{titulo}</h1>
+          <div className="mt-5">
             <p className="text-base">{texto}</p>
           </div>
         </div>

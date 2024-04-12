@@ -1,38 +1,24 @@
-import { Box, Flex } from '@chakra-ui/react'
 import { About } from './about/about'
 import Galeria from './galeria/galeria'
 import { Especialidades } from './especialidades/especialidades'
 import { Welcome } from './vienvenida/welcome'
 import Portada from './portada/portada'
 import { Reviews } from './reviews/reviews'
+
 export const Body = ({idioma}) => {
-
   return (
-    <Box>    
-        <Flex >
+    <div className="flex flex-col space-y-4">    
         <Portada idioma={idioma}/>
-        </Flex> 
 
-        <Flex marginTop={'1%'}>
-          <Welcome idioma={idioma}/>
-        </Flex>
+        <Welcome idioma={idioma}/>
 
-        <Flex marginTop={'1%'}>
-          <Especialidades idioma={idioma}/>
-        </Flex>
+        <Especialidades idioma={idioma}/>
 
-        <Flex marginTop={'1%'}>
-          <Reviews idioma={idioma}/>
-        </Flex>
+        <Reviews idioma={idioma}/>
 
-        <Flex marginTop={'1%'}>
-          <About idioma={idioma}/>
-        </Flex>
-        <Flex marginTop={'1%'}
-        marginBottom={'1%'}>
-          <Galeria idioma={idioma}/>
-        </Flex>
+        <About idioma={idioma}/>
 
-    </Box>
+        <Galeria idioma={idioma}/>
+    </div>
   )
 }

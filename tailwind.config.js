@@ -7,6 +7,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        gold: '#FFD700',
+        metal: '#0047AB'
+
+      },
+      fontFamily: {
+        custom: ['Lustria', 'serif'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -14,5 +22,6 @@ module.exports = {
       },
     },
   },
+  variants: {},
   plugins: [],
 }

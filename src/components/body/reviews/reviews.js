@@ -12,7 +12,7 @@ export const Reviews = ({idioma}) => {
         <div className="bg-black text-white w-full min-w-[300px] lg:min-w-[100vw]">
             <div className="m-5">
                 <div className="flex flex-col items-center space-y-0 ">
-                    <h1 className="text-3xl font-bold">{titulo}</h1>
+                    <h1 className="text-4xl font-bold text-metal">{titulo}</h1>
                     <p className="text-base">{sub1}</p>
                 </div>
                 <div className="m-3 flex flex-col lg:flex-row space-y-10 md:space-y-4 lg:space-y-0 lg:space-x-12 items-center justify-center">
