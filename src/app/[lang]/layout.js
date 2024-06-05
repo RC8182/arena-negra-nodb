@@ -2,6 +2,10 @@ import ScrollToTopButton from '@/components/scrollUp';
 import './globals.css'
 // import { Providers } from './providers'
 import GoogleAnalytics from './googleAnalytics';
+import NavBar from '@/components/navbar/navbar';
+import Footer from '@/components/footer/footer';
+import { HStack } from '@chakra-ui/react';
+import FootBar from '@/components/footer/footBar';
 
 
 
@@ -17,7 +21,12 @@ export default function RootLayout({ children, params }) {
       <body>
         {/* <Providers> */}
         <GoogleAnalytics />
+        <NavBar idioma={currentLang}/>
           {children}
+          <Footer idioma={currentLang}/>
+          <HStack display={{ base: 'flex', md: 'none' }}>
+            <FootBar idioma={currentLang}/>
+          </HStack>
         <ScrollToTopButton/>
         {/* </Providers> */}
       </body>

@@ -24,9 +24,9 @@ export default function NavBar({ idioma }) {
           {isOpen ? 'X' : '☰'}
         </button>
         <div className="flex space-x-8 items-cente">
-          <Link className='text-2xl font-bold text-metal border-metal'href="/">
-            Arena Negra
-          </Link>
+        <Link className='text-2xl font-bold text-metal border-metal' href={idioma === 'es' ? '/' : '/en'}>
+          Arena Negra
+        </Link>
           <div className="hidden md:flex">
             <NavLink idioma={idioma} />
           </div>

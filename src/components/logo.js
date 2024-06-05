@@ -3,7 +3,7 @@ import logo from '../../public/images/LogoArena.png';
 
 export const Logo = ({ width }) => {
   return (
-    <div className={`m-12 self-center`}>
+    <div className={`m-4 self-center`}>
       <Image
         src={logo}
         alt="Logo de Arena"
