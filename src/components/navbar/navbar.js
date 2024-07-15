@@ -34,7 +34,7 @@ export default function NavBar({ idioma }) {
 
         <div className="flex items-center space-x-16">
           <div className="hidden md:flex space-x-4">
-            <Llamar phone={+34677397592} idioma={idioma} />
+            <Llamar phone={+34648416513} idioma={idioma} />
             <Direccion idioma={idioma} />
             <Idiomas idioma={idioma} />
           </div>
