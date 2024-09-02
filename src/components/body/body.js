@@ -4,6 +4,7 @@ import { Especialidades } from './especialidades/especialidades'
 import { Welcome } from './vienvenida/welcome'
 import Portada from './portada/portada'
 import { Reviews } from './reviews/reviews'
+import { Reservar } from '../reservasForm/reservar'
 
 export const Body = ({idioma}) => {
   return (
@@ -15,6 +16,7 @@ export const Body = ({idioma}) => {
         <Especialidades idioma={idioma}/>
 
         <Reviews idioma={idioma}/>
+        <Reservar idioma={idioma}/>
 
         <About idioma={idioma}/>
 

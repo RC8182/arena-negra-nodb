@@ -1,4 +1,4 @@
-import img from '../../../../public/uploads/portada/portada.jpg'
+import img from '/public/uploads/portada/portada.jpg'
 export const datos = {
   esp: {
     portada: {

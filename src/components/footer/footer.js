@@ -16,6 +16,7 @@ export default function Footer({idioma}) {
   const direccion= datosFooter.pie.direccion;
   const horario= datosFooter.pie.horario;
   const siguenos= datosFooter.pie.siguenos;
+  const grupo= datosFooter.pie.grupo;
 
   return (
     <div className="bg-black text-white w-full min-w-[300px] lg:min-w-full min-h-[600px]">
@@ -66,6 +67,22 @@ export default function Footer({idioma}) {
             </a>
             <a href={'https://www.tripadvisor.es/Restaurant_Review-g1188716-d23657993-Reviews-Restaurente_Arena_Negra_Taberna_BBQ-Los_Abrigos_Tenerife_Canary_Islands.html'}>
               TripAdvisor
+            </a>
+          </div>
+          <div className="flex flex-col">
+            <ListHeader>{grupo.titulo}</ListHeader>
+            <a href={grupo.arena.url} target='blank'>
+              {grupo.arena.nombre}
+            </a>
+
+            <a href={grupo.paella.url} target='blank'>
+            {grupo.paella.nombre}
+            </a>
+            <a href={grupo.nina.url} target='blank'>
+            {grupo.nina.nombre}
+            </a>
+            <a href={grupo.canita.url} target='blank'>
+            {grupo.canita.nombre}
             </a>
           </div>
         </div>

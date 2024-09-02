@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 
-export const BotonReservar = ({ idioma }) => {
+export const ReservarFooter = ({ idioma }) => {
 
   return (
-    <button className="border border-metal bg-black p-2 rounded-md hover:border-2">
+    <div className="text-white hover:text-black">
       {idioma === 'es' ? (
         <Link
         className="text-white"  target="_blank" rel="noopener noreferrer"
@@ -20,7 +20,7 @@ export const BotonReservar = ({ idioma }) => {
             Book a Table       
         </Link>
       )}
-    </button>
+    </div>
   );
 };
 

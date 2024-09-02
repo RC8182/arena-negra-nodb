@@ -1,4 +1,4 @@
-import { Reservar } from '../../botones/reservas'
+import { BotonReservar, Reservar } from '../../botones/reservas'
 import { Logo } from '../../logo'
 import { datos } from './db'
 import { AltComponent } from '@/components/parallax/altComponent/altComponent';
@@ -31,7 +31,7 @@ export default function Portada ({idioma}) {
                     </div>
 
                     <div className='flex flex-col justify-center w-9/10 m-auto'>
-                        <Reservar idioma={idioma} />
+                        <BotonReservar idioma={idioma} pagina={'Arena Negra Restaurant'}/>
                     </div>
                     <div 
                         className='titulo justify-center text-white py-2 text-lg flex flex-col tracking-widest'

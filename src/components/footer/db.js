@@ -26,7 +26,26 @@ export const datos=
             },
             siguenos:{
                 titulo:'Siguenos'
-            }
+            },
+            grupo:{
+                titulo:'Grupo DIE DREI SL',
+                arena:{
+                    nombre:'Arena Negra Restaurante',
+                    url:'https://arena-negra-restaurant.com/es'
+                },
+                paella:{
+                    nombre:'La Paella Restaurante',
+                    url:'https://la-paella-restaurante.com/es'
+                },
+                nina:{
+                    nombre:'La Niña Restaurante',
+                    url:'https://la-nina-restaurante.com/es'
+                }, 
+                canita:{
+                    nombre:'La Cañita Cocktail Bar',
+                    url:'#'
+                }, 
+            },
 
         }
         
@@ -59,7 +78,26 @@ export const datos=
             },
             siguenos:{
                 titulo:'Follow Us'
-            }
+            },
+            grupo:{
+                titulo:'Grupo DIE DREI SL',
+                arena:{
+                    nombre:'Arena Negra Restaurant',
+                    url:'https://arena-negra-restaurant.com/en'
+                },
+                paella:{
+                    nombre:'La Paella Restaurant',
+                    url:'https://la-paella-restaurante.com/en'
+                },
+                nina:{
+                    nombre:'La Niña Restaurant',
+                    url:'https://la-nina-restaurante.com/en'
+                }, 
+                canita:{
+                    nombre:'La Cañita Cocktail Bar',
+                    url:'#'
+                }, 
+            },
 
         }
 
