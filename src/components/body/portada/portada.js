@@ -1,9 +1,8 @@
-import { BotonReservar, Reservar } from '../../botones/reservas'
+import { BotonReservar } from '../../botones/reservas'
 import { Logo } from '../../logo'
-import { datos } from './db'
 import { AltComponent } from '@/components/parallax/altComponent/altComponent';
 
-export default function Portada ({idioma}) {
+export default function Portada ({idioma, datos, border_color}) {
 
     const datosPortada =( idioma==='es') ? datos?.esp : datos?.ing;
     const h1= datosPortada.portada.h1
@@ -31,13 +30,13 @@ export default function Portada ({idioma}) {
                     </div>
 
                     <div className='flex flex-col justify-center w-9/10 m-auto'>
-                        <BotonReservar idioma={idioma} pagina={'Arena Negra Restaurant'}/>
+                        <BotonReservar idioma={idioma} border_color={border_color}/>
                     </div>
                     <div 
                         className='titulo justify-center text-white py-2 text-lg flex flex-col tracking-widest'
                         style={{margin: '1%', fontSize: '25px'}}>
                         <h1>{h1}</h1>
-                        <Logo width={'150px'}/>
+                        <Logo width={'150px'} img={datosPortada.logo}/>
                     </div>
                    
                 </div>

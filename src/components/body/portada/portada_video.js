@@ -1,7 +1,7 @@
 import { Box, Flex } from '@chakra-ui/react';
 import { Reservar } from '../../botones/reservas';
 import { Logo } from '../../logo';
-import { datos } from './db';
+import { datos } from '../../../app/[lang]/portada-db';
 
 export default async function Portada({ idioma }) {
   const datosPortada = idioma === 'es' ? datos?.esp : datos?.ing;

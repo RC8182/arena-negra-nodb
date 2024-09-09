@@ -2,7 +2,7 @@
 import { ArrowUpIcon } from "@chakra-ui/icons";
 import { useEffect, useState } from "react";
 
-const ScrollToTopButton = () => {
+const ScrollToTopButton = ({text_color, border_color}) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const ScrollToTopButton = () => {
 
   return (
     <button
-      className={`fixed bottom-16 right-4 rounded-full p-4 bg-black text-metal border-metal border-2 outline-none transition-opacity duration-200 ${
+      className={`fixed bottom-16 right-4 rounded-full p-4 bg-black ${text_color} ${border_color} border-2 outline-none transition-opacity duration-200 ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
       onClick={scrollToTop}

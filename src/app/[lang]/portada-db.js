@@ -1,4 +1,6 @@
-import img from '/public/uploads/portada/portada.jpg'
+import img from '/public/arena/uploads/portada/portada.jpg'
+import logo from '/public/arena/logo/LogoArena.png'
+
 export const datos = {
   esp: {
     portada: {
@@ -8,6 +10,7 @@ export const datos = {
       img: img,
       alt:'Imagen del Restaurante Arena Negra en Los Abrigos'
     },
+    logo:logo,
 
   },
   ing: {
@@ -18,5 +21,7 @@ export const datos = {
       img: img,
       alt:'Image of the Arena Negra Restaurant in Los Abrigos'
     },
+    logo:logo
+    
   },
 };

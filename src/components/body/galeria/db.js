@@ -1,8 +1,8 @@
-import gal from 'public/uploads/galeria/galeria.jpg'
-import gal1 from 'public/uploads/galeria/galeria1.jpg'
-import gal2 from 'public/uploads/galeria/galeria2.jpg'
-import gal3 from 'public/uploads/galeria/galeria3.jpg'
-import gal4 from 'public/uploads/galeria/galeria4.jpg'
+import gal from 'public/arena/uploads/galeria/galeria.jpg'
+import gal1 from 'public/arena/uploads/galeria/galeria1.jpg'
+import gal2 from 'public/arena/uploads/galeria/galeria2.jpg'
+import gal3 from 'public/arena/uploads/galeria/galeria3.jpg'
+import gal4 from 'public/arena/uploads/galeria/galeria4.jpg'
 export const datos = {
   es: {
     galeria: {

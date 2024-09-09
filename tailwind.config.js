@@ -9,7 +9,8 @@ module.exports = {
     extend: {
       colors: {
         gold: '#FFD700',
-        metal: '#14A8CD'
+        metal: '#14A8CD',
+        rosa:'#f15eb1'
 
       },
       fontFamily: {

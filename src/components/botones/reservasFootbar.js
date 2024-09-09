@@ -7,14 +7,14 @@ export const ReservarFooter = ({ idioma }) => {
     <div className="text-white hover:text-black">
       {idioma === 'es' ? (
         <Link
-        className="text-white"  target="_blank" rel="noopener noreferrer"
+        className="text-white"  rel="noopener noreferrer"
         href={'#reservar'} 
         passHref>
             Reservar
         </Link>
       ) : (
         <Link 
-        className="text-white" target="_blank" rel="noopener noreferrer"
+        className="text-white" rel="noopener noreferrer"
         href={'#booking'} 
         passHref>
             Book a Table       

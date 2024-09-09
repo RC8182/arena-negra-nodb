@@ -1,6 +1,22 @@
-import { Body } from "@/components/body/body";
+import ScrollToTopButton from '@/components/scrollUp';
+import './globals.css';
+import GoogleAnalytics from './googleAnalytics';
+import NavBar from '@/components/navbar/navbar';
+import Footer from '@/components/footer/footer';
+import { HStack } from '@chakra-ui/react';
+import FootBar from '@/components/footer/footBar';
+import Portada from '@/components/body/portada/portada';
+import { Welcome } from '@/components/body/vienvenida/welcome';
+import { Especialidades } from '@/components/body/especialidades/especialidades';
+import { Reviews } from '@/components/body/reviews/reviews';
+import { Reservar } from '@/components/reservasForm/reservar';
+import { About } from '@/components/body/about/about';
+import Galeria from '@/components/body/galeria/galeria';
+import { datos } from './portada-db';
+import { datosF } from './footer-db';
 
-export const metadata = {
+// Metadata para las diferentes lenguas
+const metadata = {
   en: {
     title: 'Restaurant in Los Abrigos - Arena Negra',
     description: 'Enjoy the best paellas, pizzas, and local fish platters in Los Abrigos, Tenerife. Arena Negra Restaurant offers a unique experience with stunning views and unbeatable customer service.',
@@ -13,19 +29,59 @@ export const metadata = {
   },
 };
 
-
-export default function App({params}){
+export default function Page({ params }) {
+  const idioma = params.lang || 'es'; // Default to Spanish if no language is specified
   const currentUrl = `https://arena-negra-restaurant.com/${params.lang}`;
-  const lang= params.lang;
-  const currentMetadata = metadata[lang];
-    return(
-        <div>
-          <title>{currentMetadata?.title}</title>
-          <link rel="canonical" href={currentUrl} />
-          <meta name="description" content={currentMetadata?.description} />
-          <meta name="keywords" content={currentMetadata?.keywords} />
-          <Body idioma={lang}/>
-        </div>
-    )
-}
+  const currentMetadata = metadata[idioma];
+  const metal="#14A8CD";
 
+  return (
+    <html lang={idioma}>
+      <head>
+        {/* Meta tags */}
+        <meta name="google-site-verification" content="Rm2sDQs-MVKtHT9LyDkRsSFVTAVbA0OHFvWdRa7I3F8" />
+        <meta name="ahrefs-site-verification" content="9b2fa73d05ce4d07c7d774b8479e5f3104effd2df784966626c80a541bb702b7"></meta>
+        <meta name="theme-color" content="black" />
+        <meta name="description" content={currentMetadata?.description} />
+        <meta name="keywords" content={currentMetadata?.keywords} />
+        <link rel="canonical" href={currentUrl} />
+        <title>{currentMetadata?.title}</title>
+      </head>
+      <body>
+        {/* Google Analytics */}
+        <GoogleAnalytics />
+        
+        {/* Navigation bar */}
+        <NavBar idioma={idioma} bgcolor="black" textLogoColor={metal} buttonColor="red-500" borderColor="yellow-500" textColor="white" text={"Arena Negra"} />
+
+
+        {/* Main content */}
+        <div className="flex flex-col space-y-4">    
+          <Portada idioma={idioma} datos={datos} logo={datos.logo} border_color={'border-metal'}/>
+
+          <Welcome idioma={idioma}/>
+
+          <Especialidades idioma={idioma}/>
+
+          <Reviews idioma={idioma}/>
+          <Reservar idioma={idioma} pagina={'Arena Negra'} title_color={'text-metal'}/>
+
+          <About idioma={idioma} title_color={'text-metal'}/>
+
+          <Galeria idioma={idioma}/>
+      </div>
+
+        {/* Footer */}
+        <Footer idioma={idioma} lines={metal} titlecolor={metal} datos={datosF}/>
+        
+        {/* Mobile Footer */}
+        <HStack display={{ base: 'flex', md: 'none' }}>
+          <FootBar idioma={idioma}  border_color={'border-metal'}/>
+        </HStack>
+
+        {/* Scroll to Top Button */}
+        <ScrollToTopButton text_color={'text-metal'} border_color={'border-metal'}/>
+      </body>
+    </html>
+  );
+}

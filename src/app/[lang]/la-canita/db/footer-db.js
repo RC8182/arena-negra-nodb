@@ -1,4 +1,6 @@
-export const datos=
+import logo from '/public/canita/logo/logo.png'
+
+export const datosF=
 {
     esp:{
 
@@ -43,11 +45,12 @@ export const datos=
                 }, 
                 canita:{
                     nombre:'La Cañita Cocktail Bar',
-                    url:'#'
+                    url:'https://arena-negra-restaurant.com/es/la-canita'
                 }, 
             },
 
-        }
+        },
+        logo: logo
         
 
     },
@@ -95,11 +98,12 @@ export const datos=
                 }, 
                 canita:{
                     nombre:'La Cañita Cocktail Bar',
-                    url:'#'
+                    url:'https://arena-negra-restaurant.com/en/la-canita'
                 }, 
             },
 
-        }
+        },
+        logo:logo
 
     }
 

@@ -1,15 +1,15 @@
 import { Logo } from '../logo';
-import { datos } from './db';
 
-const ListHeader = ({ children }) => {
+
+const ListHeader = ({ children, textColor }) => {
   return (
-    <h2 className="font-semibold text-lg text-metal mb-2">
+    <h2 className="font-semibold text-lg mb-2" style={{color:textColor}}>
       {children}
     </h2>
   )
 }
 
-export default function Footer({idioma}) {
+export default function Footer({idioma, lines, titlecolor, datos}) {
 
   const datosFooter =( idioma==='es') ? datos?.esp : datos?.ing;
   const contacto= datosFooter.pie.contacto;
@@ -18,13 +18,15 @@ export default function Footer({idioma}) {
   const siguenos= datosFooter.pie.siguenos;
   const grupo= datosFooter.pie.grupo;
 
+
+
   return (
     <div className="bg-black text-white w-full min-w-[300px] lg:min-w-full min-h-[600px]">
       <div className="container mx-auto py-10 justify-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 m-5">
           <div id='contacto' className="flex flex-col">
             
-            <ListHeader>{contacto.titulo}</ListHeader>
+            <ListHeader textColor={titlecolor}>{contacto.titulo}</ListHeader>
             <div className='telefono'>
                 <h2>{contacto.tel}</h2>
             </div>
@@ -34,7 +36,7 @@ export default function Footer({idioma}) {
 
           </div>
           <div className="flex flex-col">
-            <ListHeader>{direccion.titulo}</ListHeader>
+            <ListHeader textColor={titlecolor}>{direccion.titulo}</ListHeader>
             <div className='direccion flex flex-col'>
                 <h2>{direccion.dir}</h2>
                 <h2>{direccion.dir1}</h2>
@@ -43,7 +45,7 @@ export default function Footer({idioma}) {
             </div>
           </div>
           <div className="flex flex-col">
-            <ListHeader>{horario.titulo}</ListHeader>
+            <ListHeader textColor={titlecolor}>{horario.titulo}</ListHeader>
             <div className="flex">
               <ul>
                 <li>{horario.lunes}</li>
@@ -57,7 +59,7 @@ export default function Footer({idioma}) {
             </div>
           </div>
           <div className="flex flex-col">
-            <ListHeader>{siguenos.titulo}</ListHeader>
+            <ListHeader textColor={titlecolor}>{siguenos.titulo}</ListHeader>
             <a href={'https://www.facebook.com/profile.php?id=61550354287185'}>
               Facebook
             </a>
@@ -70,7 +72,7 @@ export default function Footer({idioma}) {
             </a>
           </div>
           <div className="flex flex-col">
-            <ListHeader>{grupo.titulo}</ListHeader>
+            <ListHeader textColor={titlecolor}>{grupo.titulo}</ListHeader>
             <a href={grupo.arena.url} target='blank'>
               {grupo.arena.nombre}
             </a>
@@ -89,9 +91,9 @@ export default function Footer({idioma}) {
       </div>
       <div className="pb-20">
         <div className="flex items-center mx-8 my-8">
-          <hr className="flex-grow border-t border-metal" />
-          <Logo width={'120px'}/>
-          <hr className="flex-grow border-t border-metal" />
+          <hr className="flex-grow border-t" style={{borderColor:lines}}/>
+          <Logo width={'120px'} img={datosFooter.logo}/>
+          <hr className="flex-grow border-t" style={{borderColor:lines}}/>
         </div>
         <p className="text-sm text-center">
           © 2023 Arena Negra Restaurante. All rights reserved
