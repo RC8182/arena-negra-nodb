@@ -6,7 +6,7 @@ import { Llamar } from '../botones/llamar';
 import { Direccion } from '../botones/direccion';
 import { Idiomas } from '../botones/idiomas';
 
-export default function NavBar({ idioma, bgcolor, textLogoColor, buttonColor, borderColor, textColor, text }) {
+export default function NavBar({ idioma, bgcolor, textLogoColor, buttonColor, borderColor, textColor, text, datos }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
@@ -29,7 +29,7 @@ export default function NavBar({ idioma, bgcolor, textLogoColor, buttonColor, bo
             {text}
           </Link>
           <div className="hidden md:flex">
-            <NavLink idioma={idioma} />
+            <NavLink idioma={idioma} datos={datos}/>
           </div>
         </div>
 

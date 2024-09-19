@@ -1,4 +1,4 @@
-export const datos=
+export const datosN=
 {
     esp:{
         navbar:{
@@ -15,10 +15,10 @@ export const datos=
                     title: 'Contacto',
                     url: '#contacto'
                 },
-                {
-                    title: 'Menu',
-                    url: 'es/menu'
-                },
+                // {
+                //     title: 'Menu',
+                //     url: 'es/menu'
+                // },
 
             ]
         },
@@ -39,10 +39,10 @@ export const datos=
                     title: 'Contact Us',
                     url: '#contacto'
                 },
-                {
-                    title: 'Menu',
-                    url: 'en/menu'
-                },
+                // {
+                //     title: 'Menu',
+                //     url: 'en/menu'
+                // },
 
             ]
    },        

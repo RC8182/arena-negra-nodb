@@ -1,6 +1,6 @@
-import pulpo from '/public/uploads/menu/entrantes/pulpo.png'
-import sardinas from '/public/uploads/menu/entrantes/sardinas.png'
-import padron from '/public/uploads/menu/entrantes/padron.png'
+import pulpo from '/public/arena/uploads/menu/entrantes/pulpo.png'
+import sardinas from '/public/arena/uploads/menu/entrantes/sardinas.png'
+import padron from '/public/arena/uploads/menu/entrantes/padron.png'
 export const entrantes={
     es:{
         title:'Entrantes',

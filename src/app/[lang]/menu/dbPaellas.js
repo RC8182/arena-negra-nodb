@@ -1,5 +1,5 @@
-import paellaM from '/public/uploads/menu/arroces/paella.png'
-import paellaB from '/public/uploads/menu/arroces/paellaB.png'
+import paellaM from '/public/arena/uploads/menu/arroces/paella.png'
+import paellaB from '/public/arena/uploads/menu/arroces/paellaB.png'
 export const paellas={
     es:{
         title:'Arroces',

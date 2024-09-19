@@ -1,17 +1,26 @@
-import '../globals.css'
+import '../globals.css';
+
+export const metadata = {
+  title: 'La Cañita Cocktail Bar | Los Abrigos',
+  description: {
+    es: 'La Cañita Cocktail Bar es un bar ubicado en el paseo marítimo de Los Abrigos. Nuestra terraza ofrece vistas increíbles al mar y al muelle de Los Abrigos. Nos especializamos en cócteles y cafés, con un reconocido barman cubano. ¡Nuestros cócteles son los mejores de Tenerife!',
+    en: 'La Cañita Cocktail Bar is a bar located on the seafront promenade of Los Abrigos. Our terrace offers incredible views of the sea and the Los Abrigos pier. We specialize in cocktails and coffees, with a renowned Cuban bartender. Our cocktails are the best in Tenerife!',
+  },
+};
 
 export default function CanitaLayout({ children, params }) {
-  const currentLang = params.lang || 'es'; // Default to spanish if no language is specified
+  const currentLang = params.lang || 'es'; // Default to Spanish if no language is specified
+  const description = metadata.description[currentLang];
+
   return (
-    <div lang={currentLang}>
-      <meta name="google-site-verification" content="Rm2sDQs-MVKtHT9LyDkRsSFVTAVbA0OHFvWdRa7I3F8" />
-      <meta name="ahrefs-site-verification" content="9b2fa73d05ce4d07c7d774b8479e5f3104effd2df784966626c80a541bb702b7"></meta>
-      <meta name="theme-color" content="black" />
-      <div>
-
-          {children}
-
-      </div>
-    </div>
-  )
+    <html lang={currentLang}>
+      <head>
+        <meta name="theme-color" content="black" />
+        <meta name="description" content={description} />
+      </head>
+      <body>
+        {children}
+      </body>
+    </html>
+  );
 }

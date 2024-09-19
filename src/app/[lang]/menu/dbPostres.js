@@ -1,6 +1,6 @@
-import barraquito from '/public/uploads/menu/postres/barraquito.png'
-import capuchino from '/public/uploads/menu/postres/capuchino.png'
-import flan from '/public/uploads/menu/postres/flan.png'
+import barraquito from '/public/arena/uploads/menu/postres/barraquito.png'
+import capuchino from '/public/arena/uploads/menu/postres/capuchino.png'
+import flan from '/public/arena/uploads/menu/postres/flan.png'
 export const postres={
     es:{
         title:'Postres y Cafes',

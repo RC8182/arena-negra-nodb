@@ -14,6 +14,9 @@ import { About } from '@/components/body/about/about';
 import Galeria from '@/components/body/galeria/galeria';
 import { datos } from './portada-db';
 import { datosF } from './footer-db';
+import { datosE } from '@/components/body/especialidades/arenaDB/db';
+import { datosN } from '@/components/navbar/arena/db';
+import { datosG } from '@/components/body/galeria/arena/db';
 
 // Metadata para las diferentes lenguas
 const metadata = {
@@ -49,10 +52,10 @@ export default function Page({ params }) {
       </head>
       <body>
         {/* Google Analytics */}
-        <GoogleAnalytics />
+        <GoogleAnalytics idioma={idioma} />
         
         {/* Navigation bar */}
-        <NavBar idioma={idioma} bgcolor="black" textLogoColor={metal} buttonColor="red-500" borderColor="yellow-500" textColor="white" text={"Arena Negra"} />
+        <NavBar idioma={idioma} bgcolor="black" textLogoColor={metal} buttonColor="red-500" borderColor="yellow-500" textColor="white" text={"Arena Negra"} datos={datosN} />
 
 
         {/* Main content */}
@@ -61,14 +64,14 @@ export default function Page({ params }) {
 
           <Welcome idioma={idioma}/>
 
-          <Especialidades idioma={idioma}/>
+          <Especialidades idioma={idioma} datos={datosE} title_color={'text-metal'}/>
 
           <Reviews idioma={idioma}/>
           <Reservar idioma={idioma} pagina={'Arena Negra'} title_color={'text-metal'}/>
 
           <About idioma={idioma} title_color={'text-metal'}/>
 
-          <Galeria idioma={idioma}/>
+          <Galeria idioma={idioma} datos={datosG} text_color={'text-metal'}/>
       </div>
 
         {/* Footer */}

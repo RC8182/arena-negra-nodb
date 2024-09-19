@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { datos } from "./db";
 
-export const NavLink = ({idioma}) => {
+
+export const NavLink = ({idioma, datos}) => {
 
     const Links =( idioma==='es')
     ? datos?.esp.navbar.links

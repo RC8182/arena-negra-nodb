@@ -1,6 +1,6 @@
-import tablaPescado from '/public/uploads/menu/pescados/tablaPescado.png'
-import mixtoTapas from '/public/uploads/menu/pescados/mixtoTapas.png'
-import pescadoDia from '/public/uploads/menu/pescados/pescadoDia.png'
+import tablaPescado from '/public/arena/uploads/menu/pescados/tablaPescado.png'
+import mixtoTapas from '/public/arena/uploads/menu/pescados/mixtoTapas.png'
+import pescadoDia from '/public/arena/uploads/menu/pescados/pescadoDia.png'
 export const pescados={
     es:{
         title:'Pescados',

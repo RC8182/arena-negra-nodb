@@ -1,7 +1,7 @@
-import paella from '../../../../public/arena/uploads/especialidades/paella.png'
-import tabla from '../../../../public/arena/uploads/especialidades/tabla.png'
-import pizza from '../../../../public/arena/uploads/especialidades/pizza.png'
-export const datos=
+import paella from '/public/arena/uploads/especialidades/paella.png'
+import tabla from '/public/arena/uploads/especialidades/tabla.png'
+
+export const datosE=
 {
     esp:{
 
