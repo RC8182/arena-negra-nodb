@@ -1,5 +1,5 @@
 import img from '/public/arena/uploads/portada/portada.jpg'
-import logo from '/public/arena/logo/LogoArena.png'
+import logo from '/public/arena/logo/LogoArenaT.png'
 
 export const datos = {
   esp: {

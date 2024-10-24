@@ -17,7 +17,7 @@ export const datosN=
                 },
                 {
                     title: 'Menu',
-                    url: 'es/menu'
+                    url: '#menu'
                 },
 
             ]
@@ -41,7 +41,7 @@ export const datosN=
                 },
                 {
                     title: 'Menu',
-                    url: 'en/menu'
+                    url: '#menu'
                 },
 
             ]

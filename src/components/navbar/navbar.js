@@ -44,7 +44,7 @@ export default function NavBar({ idioma, bgcolor, textLogoColor, buttonColor, bo
 
       {isOpen && (
         <div style={{ color: textColor }} className="pb-4 md:hidden">
-          <NavLink idioma={idioma} />
+          <NavLink idioma={idioma}  datos={datos}/>
         </div>
       )}
     </div>

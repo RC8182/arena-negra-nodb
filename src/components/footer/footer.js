@@ -9,7 +9,7 @@ const ListHeader = ({ children, textColor }) => {
   )
 }
 
-export default function Footer({idioma, lines, titlecolor, datos}) {
+export default function Footer({idioma, lines, titlecolor, datos, awards}) {
 
   const datosFooter =( idioma==='es') ? datos?.esp : datos?.ing;
   const contacto= datosFooter.pie.contacto;
@@ -86,6 +86,10 @@ export default function Footer({idioma, lines, titlecolor, datos}) {
             <a href={grupo.canita.url} target='blank'>
             {grupo.canita.nombre}
             </a>
+          </div>
+          <div className="flex flex-col">
+            <ListHeader textColor={titlecolor}>{awards}</ListHeader>
+
           </div>
         </div>
       </div>

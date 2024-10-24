@@ -17,6 +17,8 @@ import { datosF } from './footer-db';
 import { datosE } from '@/components/body/especialidades/arenaDB/db';
 import { datosN } from '@/components/navbar/arena/db';
 import { datosG } from '@/components/body/galeria/arena/db';
+import Menu from '@/components/menu/menu';
+import { Awards } from '@/components/footer/awards/awards';
 
 // Metadata para las diferentes lenguas
 const metadata = {
@@ -72,10 +74,12 @@ export default function Page({ params }) {
           <About idioma={idioma} title_color={'text-metal'}/>
 
           <Galeria idioma={idioma} datos={datosG} text_color={'text-metal'}/>
+
+          <Menu idioma={idioma}/>
       </div>
 
         {/* Footer */}
-        <Footer idioma={idioma} lines={metal} titlecolor={metal} datos={datosF}/>
+        <Footer idioma={idioma} lines={metal} titlecolor={metal} datos={datosF} awards={<Awards idioma={idioma}/>}/>
         
         {/* Mobile Footer */}
         <HStack display={{ base: 'flex', md: 'none' }}>

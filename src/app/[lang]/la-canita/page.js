@@ -2,8 +2,6 @@ import { About } from "@/components/body/about/about";
 import { Especialidades } from "@/components/body/especialidades/especialidades";
 import Galeria from "@/components/body/galeria/galeria";
 import Portada from "@/components/body/portada/portada";
-import { Reviews } from "@/components/body/reviews/reviews";
-import { Welcome } from "@/components/body/vienvenida/welcome";
 import FootBar from "@/components/footer/footBar";
 import Footer from "@/components/footer/footer";
 import NavBar from "@/components/navbar/navbar";
@@ -16,6 +14,8 @@ import { datosE } from "@/components/body/especialidades/canitaDB/db";
 import { datosN } from "@/components/navbar/canita/db";
 import { datosG } from "@/components/body/galeria/canita/db";
 import GoogleAnalytics from "../googleAnalytics";
+
+
 
 
 export default function Page({params}) {
@@ -41,8 +41,9 @@ export default function Page({params}) {
           <About idioma={idioma} title_color={'text-pink-500'}/>
 
           <Galeria idioma={idioma} datos={datosG} text_color={'text-pink-500'}/>
+
       </div>
-      <Footer idioma={idioma} lines={rosa} titlecolor={rosa} datos={datosF}/>
+      <Footer idioma={idioma} lines={rosa} titlecolor={rosa} datos={datosF} />
       <HStack display={{ base: 'flex', md: 'none' }}>
         <FootBar idioma={idioma} border_color={'border-pink-500'}/>
       </HStack>
