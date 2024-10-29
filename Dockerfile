@@ -14,6 +14,7 @@ RUN npm install && \
     npm rebuild --arch=x64 --platform=linux --libc=musl sharp && \
     npm i @formatjs/intl-localematcher &&\
     npm i negotiator &&\
+    npm install googleapis@105 @google-cloud/local-auth@2.1.0 --save &&\
     npm install react-icons &&\
     npx tailwindcss init -p && \
     npm run build

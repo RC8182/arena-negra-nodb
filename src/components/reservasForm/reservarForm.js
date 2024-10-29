@@ -8,6 +8,10 @@ const ReservationForm = ({ idioma, pagina }) => {
   const [time, setTime] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
 
+  // Horario configurable de apertura y cierre
+  const openingTime = "12:45";
+  const closingTime = "22:00";
+
   useEffect(() => {
     const today = new Date().toISOString().split('T')[0];
     setDate(today);
@@ -17,24 +21,56 @@ const ReservationForm = ({ idioma, pagina }) => {
     setIsFormValid(name !== '' && people !== '' && date !== '' && time !== '');
   }, [name, people, date, time]);
 
-  const handleReservation = () => {
+  const isWithinOperatingHours = (time) => {
+    return time >= openingTime && time <= closingTime;
+  };
+
+  const handleReservation = async () => {
     if (!isFormValid) return;
 
-    const formattedDate = new Date(date).toLocaleDateString(idioma === 'es' ? 'es-ES' : 'en-US', {
-      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
-    });
-    const formattedTime = new Date(`${date}T${time}`).toLocaleTimeString(idioma === 'es' ? 'es-ES' : 'en-US', {
-      hour: '2-digit', minute: '2-digit'
-    });
+    if (!isWithinOperatingHours(time)) {
+      alert(idioma === 'es' ? 'La cocina está cerrada, no se pueden realizar reservas en este horario.' : 'The kitchen is closed; reservations cannot be made at this time.');
+      return;
+    }
 
-    const mensajeES = `Hola, me gustaría reservar una mesa en ${pagina} el ${formattedDate} a las ${formattedTime}. Somos ${people} personas y mi nombre es ${name}.`;
-    const mensajeEN = `Hello, I would like to book a table at ${pagina} on ${formattedDate} at ${formattedTime}. We are ${people} people and my name is ${name}.`;
+    // Usar formato ISO 8601 en la fecha y hora antes de enviarlas
+    const startDateTime = new Date(`${date}T${time}:00`).toISOString(); // Convertir a ISO 8601
+    const endDateTime = new Date(new Date(startDateTime).getTime() + 1.5 * 60 * 60 * 1000).toISOString(); // Añadir 1.5 horas
 
-    const url = (idioma === 'es')
+    const mensajeES = `Hola, me gustaría reservar una mesa en ${pagina} el ${new Date(startDateTime).toLocaleDateString('es-ES', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })} a las ${new Date(startDateTime).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })}. Somos ${people} personas y mi nombre es ${name}.`;
+    const mensajeEN = `Hello, I would like to book a table at ${pagina} on ${new Date(startDateTime).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })} at ${new Date(startDateTime).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}. We are ${people} people and my name is ${name}.`;
+
+    const whatsappUrl = idioma === 'es'
       ? `https://api.whatsapp.com/send/?phone=34648416513&text=${encodeURIComponent(mensajeES)}`
       : `https://api.whatsapp.com/send/?phone=34648416513&text=${encodeURIComponent(mensajeEN)}`;
 
-    window.open(url, '_blank');
+    // Llamar al backend para crear la reserva en Google Calendar
+    try {
+      const response = await fetch('/api/reservation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          people,
+          date: startDateTime, // Enviar en formato ISO 8601
+          time: endDateTime, // Enviar en formato ISO 8601
+          pagina
+        }),
+      });
+
+      if (response.ok) {
+        console.log('Reserva creada en Google Calendar');
+      } else {
+        console.error('Error al crear la reserva en Google Calendar');
+      }
+    } catch (error) {
+      console.error('Error al conectar con el backend', error);
+    }
+
+    // Abrir WhatsApp para el cliente
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
