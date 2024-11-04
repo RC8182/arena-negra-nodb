@@ -1,4 +1,4 @@
-import ReservationForm from "./reservarForm";
+import ReservationForm from "./reservarForm1";
 
 export const Reservar = ({ idioma, pagina, title_color }) => {
   const reservaid= (idioma==='es')?'reservar':'booking';
