@@ -6,7 +6,7 @@ WORKDIR /app
 COPY . .
 
 RUN chown -R node:node /app && \
-    chmod -R 755 /app/public
+    chmod -R 777 /app/public
 
 USER node
 RUN npm install && \
@@ -16,9 +16,11 @@ RUN npm install && \
     npm i negotiator &&\
     npm install googleapis@105 @google-cloud/local-auth@2.1.0 --save &&\
     npm install react-icons &&\
+    npm install pannellum &&\
     npx tailwindcss init -p && \
     npm run build
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["npm","run", "dev"]
+

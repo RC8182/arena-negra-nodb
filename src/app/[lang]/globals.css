@@ -4,9 +4,49 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lustria&display=swap');
 
-@layer base {
-  body {
-    font-family: 'Lustria', serif;
-    color: '#FFD700';
+.custom-hotspot {
+    display: flex;
+    justify-content: center;
+    background-color: #000000B3; /* Fondo translúcido */
+    border-radius: 50%;                          /* Bordes redondeados */
+    padding: 8px;                                /* Espacio alrededor del icono */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);    /* Sombra suave */
+    transition: transform 0.1s ease, background-color 0.1s ease; /* Transiciones */
   }
+  
+  .custom-hotspot:before {
+    content: '➽';                                /* Icono de marcador */
+    font-size: 50px;
+    color: #ffffff;  
+    transform: rotate(-90deg);
+  }
+  div.pnlm-tooltip span {
+   visibility: visible !important;
+}
+div.pnlm-tooltip span::before {
+  content: '📍';                                /* Icono de marcador */
+  font-size: 16px;
+  color: #ff5733;                               /* Color del icono */
+  margin-right: 2px;                            /* Espacio entre el icono y el texto */
+}
+
+
+.scene-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+}
+.scene-thumbnail {
+  padding: 5px;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+.scene-thumbnail.selected {
+  transform: scale(1.2); /* Agranda la escena seleccionada */
+}
+.scene-thumbnail img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
 }

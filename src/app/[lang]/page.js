@@ -19,6 +19,9 @@ import { datosN } from '@/components/navbar/arena/db';
 import { datosG } from '@/components/body/galeria/arena/db';
 import Menu from '@/components/menu/menu';
 import { Awards } from '@/components/footer/awards/awards';
+import PanoramaViewer from '@/components/body/virtualTour/panoramaView';
+import VirtualTour from '@/components/body/virtualTour/virtualTour';
+//import MenuPopup from '@/components/popup/popup';
 
 // Metadata para las diferentes lenguas
 const metadata = {
@@ -55,27 +58,27 @@ export default function Page({ params }) {
       <body>
         {/* Google Analytics */}
         <GoogleAnalytics idioma={idioma} />
-        
+        {/* <MenuPopup imageUrl="/uploads/popup.jpeg" altText="Pop-up del menú" /> */}
         {/* Navigation bar */}
         <NavBar idioma={idioma} bgcolor="black" textLogoColor={metal} buttonColor="red-500" borderColor="yellow-500" textColor="white" text={"Arena Negra"} datos={datosN} />
-
-
         {/* Main content */}
         <div className="flex flex-col space-y-4">    
           <Portada idioma={idioma} datos={datos} logo={datos.logo} border_color={'border-metal'}/>
+          {/* <PanoramaViewer/> */}
 
           <Welcome idioma={idioma}/>
 
           <Especialidades idioma={idioma} datos={datosE} title_color={'text-metal'}/>
 
-          <Reviews idioma={idioma}/>
-          <Reservar idioma={idioma} pagina={'Arena Negra'} title_color={'text-metal'}/>
+          <VirtualTour idioma={idioma} text_color={'text-metal'}/>
+
+          <Reservar idioma={idioma} pagina={'Arena Negra'} title_color={'text-metal'} highVolume={'false'}/>
 
           <About idioma={idioma} title_color={'text-metal'}/>
 
-          <Galeria idioma={idioma} datos={datosG} text_color={'text-metal'}/>
+          <Reviews idioma={idioma}/>
 
-          <Menu idioma={idioma}/>
+          {/* <Menu idioma={idioma}/> */}
       </div>
 
         {/* Footer */}

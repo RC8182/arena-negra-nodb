@@ -1,5 +1,5 @@
 import { Logo } from '../logo';
-
+import Link from 'next/link';
 
 const ListHeader = ({ children, textColor }) => {
   return (
@@ -100,7 +100,7 @@ export default function Footer({idioma, lines, titlecolor, datos, awards}) {
           <hr className="flex-grow border-t" style={{borderColor:lines}}/>
         </div>
         <p className="text-sm text-center">
-          © 2023 Arena Negra Restaurante. All rights reserved
+          © 2023 Arena Negra Restaurante. All rights reserved - Powered by <Link href={'https://jv-digital.com'}> JV-Digital</Link>
         </p>
       </div>
 
